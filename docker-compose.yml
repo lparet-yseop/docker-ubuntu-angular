@@ -2,8 +2,8 @@ version: '2'
 
 services:
   docker-angular:
-    image: lparet/docker-angular:0.1
+    image: lparet/docker-ubuntu-angular:1.0
     container_name: docker-angular
     restart: always
     volumes:
-      - /home/lparet/Projet/Studay/admin:/var/www/html:rw
+      - /path/to/your/project:/var/www/html:rw
