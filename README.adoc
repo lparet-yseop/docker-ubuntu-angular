@@ -24,7 +24,7 @@ You can download this container from *DockerHub* by launching this command :
 
 [source,bash]
 ----
-docker pull lparet/docker-angular
+docker pull lparet/docker-ubuntu-angular
 ----
 
 It will download the latest version.
@@ -42,12 +42,14 @@ Firstly, you have to plug an Angular project. To do that, you need to create a *
 ----
 services:
   docker-angular:
-    image: lparet/docker-angular:0.1
+    image: lparet/docker-ubuntu-angular
     container_name: docker-angular
     restart: always
     volumes:
       - /path/to/your/project:/var/www/html:rw
 ----
+
+You also can create an environment variable to choose if it's a *production* or *prototype* environment. In parallel, you have to set it in Angular application configuration. Please consult official documentation.
 
 ==== Running
 
@@ -66,7 +68,7 @@ You can use *docker run* command:
 
 [source,bash]
 ----
-docker run -it lparet/docker-ubuntu-angular:1.0 --name ubuntu-angular -v /path/to/my/project:/var/www/html
+docker run -it lparet/docker-ubuntu-angular --name ubuntu-angular -v /path/to/my/project:/var/www/html
 ----
 
 === Test your project
