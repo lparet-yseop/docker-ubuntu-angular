@@ -1,28 +1,22 @@
 = Docker container Angular
 
 This repository contains configurations to create a Docker container with:
-- *nodejs* v7.+ and npm 
-- *angular-cli* latest version
-- *Apache2*
+
+* *Ubuntu* 16.04
+* *Apache2*
+* *nodejs* v7.+ and npm 
+* *angular-cli* latest version
 
 This container needs an Angular project to work. At the running, it will download npm packages and build the project.
 
-Like that, after few secondes/minutes, your Angular website works.
+Like that, after few secondes/minutes, your Angular app works.
 
 == Getting Started
 
 === Prerequisites
 
 You have to install *Docker* and *Docker Compose* (optional) to build and run this container.
-
-=== Build container
-
-To build the container in local, you can launch this script :
-
-[source,bash]
-----
-./build.sh
-----
+You also need to have an Angular project to start this container.
 
 === Pull container
 
@@ -39,7 +33,7 @@ It will download the latest version.
 
 ==== Prerequisites
 
-Firstly, you have to plug a Angular project. To do that, you need to create a *data volume* between host and docker container.
+Firstly, you have to plug an Angular project. To do that, you need to create a *data volume* between host and docker container:
 
 - Pull your project in a directory on your host.
 - Copy it path in *docker-compose.yml* and edit */path/to/your/project*
@@ -66,6 +60,15 @@ docker-compose up -d
 
 It will run your container with parameters specified in the file.
 
+OR
+
+You can use *docker run* command:
+
+[source,bash]
+----
+docker run -it lparet/docker-ubuntu-angular:1.0 --name ubuntu-angular -v /path/to/my/project:/var/www/html
+----
+
 === Test your project
 
 Open in your browser this URL http://localhost:80
@@ -80,6 +83,8 @@ docker logs docker-angular
 ----
 
 OR
+
+Go into the Docker container
 
 [source,bash]
 ----
