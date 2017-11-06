@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 cd /var/www/html
 
@@ -11,7 +12,7 @@ else
 fi
 
 # Build
-if [[ -z "${ENVIRONMENT}" ]]; then
+if [ -n "${ENVIRONMENT}" ]; then
     ng build --environment=${ENVIRONMENT}
 else
     ng build
