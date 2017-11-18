@@ -5,6 +5,7 @@ This repository contains configurations to create a Docker container with:
 * *Ubuntu* 16.04
 * *Apache2*
 * *nodejs* v7.+ and npm 
+* *yarn* latest version
 * *angular-cli* latest version
 
 This container needs an Angular project to work. At the running, it will download npm packages and build the project.
