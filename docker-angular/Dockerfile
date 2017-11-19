@@ -1,10 +1,10 @@
-FROM lparet/docker-ubuntu-apache2
+FROM lparet/docker-ubuntu-apache2:1.1
 
 ## Configure apt and install softwares
 RUN	apt-get -y update \
 	&& LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -y \
     curl \
-	&& curl -sL https://deb.nodesource.com/setup_7.x | bash - \
+	&& curl -sL https://deb.nodesource.com/setup_9.x | bash - \
   && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
   && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
   && apt-get -y update \
@@ -19,7 +19,7 @@ RUN	apt-get -y update \
   && rm -rf /var/lib/apt/lists/*
 
 ## Install AngularCli
-RUN npm install -g @angular/cli
+RUN yarn global add @angular/cli
 
 ## Activate rewrite : .htaccess will override Apache conf
 RUN a2enmod rewrite
