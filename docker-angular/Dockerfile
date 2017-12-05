@@ -1,4 +1,4 @@
-FROM lparet/docker-ubuntu-apache2:1.1
+FROM lparet/docker-ubuntu-apache2:1.2
 
 ## Configure apt and install softwares
 RUN	apt-get -y update \
