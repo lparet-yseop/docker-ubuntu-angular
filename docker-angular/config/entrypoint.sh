@@ -13,9 +13,9 @@ fi
 
 # Build
 if [ -n "${ENVIRONMENT}" ]; then
-    ng build --environment=${ENVIRONMENT}
+    ng build --service-worker --environment=${ENVIRONMENT}
 else
-    ng build
+    ng build --service-worker 
 fi
 
 echo "/Entrypoint"
