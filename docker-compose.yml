@@ -7,3 +7,6 @@ services:
     restart: always
     volumes:
       - /path/to/your/project:/var/www/html:rw
+    environment:
+      # You can overwrite default ng build command by a custom command. 
+      - NG_BUILD_COMMAND="YOUR_CUSTOM_NG_BUILD_COMMAND"

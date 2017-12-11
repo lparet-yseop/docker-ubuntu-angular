@@ -12,10 +12,10 @@ else
 fi
 
 # Build
-if [ -n "${ENVIRONMENT}" ]; then
-    ng build --service-worker --environment=${ENVIRONMENT}
+if [ -n "${NG_BUILD_COMMAND}" ]; then
+    ${NG_BUILD_COMMAND}
 else
-    ng build --service-worker 
+    ng build 
 fi
 
 echo "/Entrypoint"
